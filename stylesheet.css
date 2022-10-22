@@ -1,0 +1,250 @@
+  html, body{
+    height: 100%;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  .bg-image {
+    background-image: url("capa.jpeg");
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin: -8px;
+  }
+
+  .background {
+    background-image: linear-gradient(225deg, #f1f281 0, #e0f381 7.14%, #ccf281 14.29%, #b7f283 21.43%, #a0f086 28.57%, #84ed8a 35.71%, #62ea8f 42.86%, #2ae696 50%, #00e29e 57.14%, #00dda8 64.29%, #00d9b4 71.43%, #00d5c1 78.57%, #00d1cf 85.71%, #00cedd 92.86%, #00caec 100%); 
+    height: 280%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: -10px;
+  }
+    
+  .presentation {
+    background-color: rgba(0,0,0, 0.6); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+  }
+
+  .aviso {
+    background-color: rgba(0,0,0, 0.8); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 350%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 200%;
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    border-radius: 70px 70px 70px 70px;
+  }
+  .fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 10px;
+  }
+  
+  .social-bar {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-bottom: 10px;
+    text-align: center;
+    z-index: 2;
+    position: fixed;
+    bottom: 0;
+    left: 500px;
+    right: 500px;
+    border-radius: 100px 100px 0px 0px;
+    border: 3px solid white
+  }
+
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  .fa-facebook:hover {
+    transition: ease-in;
+    transition-duration: 0.15s;
+    background: white;
+    color: #3B5998;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  .fa-twitter:hover {
+    transition: ease-in;
+    transition-duration: 0.15s;
+    color: #55ACEE;
+    background: white;
+  }
+
+  .fa-instagram {
+    background: #3F729B;
+    color: white;
+  }
+  .fa-instagram:hover {
+    transition: ease-in;
+    transition-duration: 0.15s;
+    color: #3F729B;
+    background: white;
+  }
+
+  .fa:hover {
+    animation: shake 0.5s;
+  
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  ul.caberalho {
+    list-style: none;
+  }
+  ul.caberalho li {
+    display: inline-block;
+  }
+  ul.caberalho li:not(:last-child){
+    border-right: 2px solid black;
+  }7
+  ul.caberalho li {
+    padding: 0 0.5rem;
+    min-width: 12rem;
+  }
+  ul.caberalho li {
+    min-width: 12rem;
+  }
+
+  ul.lista {
+    font-size: 28px;
+    color: white;
+    -webkit-text-stroke-width: 0.4px;
+    -webkit-text-stroke-color: black;
+    margin-right: 22%;
+    text-align: justify;
+    text-indent: 25px;
+    font-weight: bold;
+  }
+
+  .posicao {
+    position: absolute;
+    top: 295%;
+    left: 120px;
+  }
+  .topo {
+    right: 0;
+    left: 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    background-color: rgba(0,0,0, 0.6);
+    border: 3px solid white;
+    border-radius: 0px 0px 70px 70px;
+    left: 250px;
+    right: 250px;    
+    z-index: 2;
+  }
+
+  .corpo {
+    position: absolute;
+    top: 140%;
+    left: 120px;
+    font-size: 28px;
+    color: white;
+    -webkit-text-stroke-width: 0.4px;
+    -webkit-text-stroke-color: black;
+    margin-right: 50%;
+    text-align: justify;
+    text-indent: 25px;
+    font-weight: bold;
+  }
+  
+  .titulo {
+    background-color: rgba(0,0,0, 0.8);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border: 3px solid white;
+    border-radius: 70px 70px 70px 70px;
+    position: absolute;
+    top: 110%;
+    left: 50px;
+    width: 20%;
+  }
+
+  .corpo-2 {
+    position: absolute;
+    top: 250%;
+    left: 120px;
+    font-size: 28px;
+    color: white;
+    -webkit-text-stroke-width: 0.4px;
+    -webkit-text-stroke-color: black;
+    margin-right: 20%;
+    text-align: justify;
+    text-indent: 25px;
+    font-weight: bold;
+  }
+  .titulo-2 {
+    background-color: rgba(0,0,0, 0.8);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border: 3px solid white;
+    border-radius: 70px 70px 70px 70px;
+    position: absolute;
+    top: 220%;
+    left: 50px;
+    width: 20%;
+  }
+
+  .img-sr {
+    background-image: url("https://www.fitmole.org/wp-content/uploads/2012/08/Chris-evans.jpg");
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 200px;
+    left: 60%;
+    top: 140%;
+    border-radius: 20px 20px 20px 20px;
+    border: 3px solid black;
+  }
