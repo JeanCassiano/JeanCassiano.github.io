@@ -1,11 +1,9 @@
   html, body{
     height: 100%;
   }
-  html {
-    scroll-behavior: smooth;
-  }
+ 
   .bg-image {
-    background-image: url("./capa.jpeg");
+    background-image: url("./img/capa.jpeg");
     filter: blur(8px);
     -webkit-filter: blur(8px);
   
