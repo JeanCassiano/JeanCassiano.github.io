@@ -143,7 +143,7 @@ body {
     display: inline-block;
   }
   ul.caberalho li:not(:last-child){
-    border-right: 2px solid black;
+    border-right: 2px solid white;
   }7
   ul.caberalho li {
     padding: 0 0.5rem;
