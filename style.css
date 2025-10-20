@@ -1,0 +1,746 @@
+/* --- GERAL E VARIÁVEIS --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --font-primary: 'Orbitron', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+    --transition-speed: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.light-mode {
+    --bg-primary: #edf2fb;
+    --bg-secondary: #e2eafc;
+    --bg-card: #ffffff;
+    --text-primary: #121b67;
+    --text-secondary: #33134a;
+    --accent-primary: #440f3b;
+    --accent-secondary: #231758;
+    --glow-color: rgba(35, 23, 88, 0.5);
+    --shadow: 0 10px 30px rgba(36, 49, 73, 0.6);
+    --parallax-gradient-start: #c1d3fe;
+    --parallax-gradient-end: #121b67;
+}
+
+.dark-mode {
+    --bg-primary: #121b67;
+    --bg-secondary: #231758;
+    --bg-card: #33134a;
+    --text-primary: #edf2fb;
+    --text-secondary: #ccdbfd;
+    --accent-primary: #c1d3fe;
+    --accent-secondary: #e2eafc;
+    --glow-color: rgba(171, 196, 255, 0.7);
+    --shadow: 0 10px 30px rgba(118, 3, 15, 0.2);
+    --parallax-gradient-start: #121b67;
+    --parallax-gradient-end: #33134a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+section {
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-primary);
+    color: var(--accent-primary);
+    text-shadow: 0 0 5px var(--glow-color);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* --- SIDEBAR (DESKTOP) --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 100vh;
+    background-color: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+    z-index: 1000;
+    transition: width var(--transition-speed);
+}
+
+.sidebar:hover {
+    width: 220px;
+}
+
+.sidebar-logo a {
+    font-family: var(--font-primary);
+    font-weight: 900;
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.sidebar-nav {
+    margin-top: 5rem;
+    margin-left: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    
+    gap: 1rem;
+    width: 100%;
+
+}
+
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.sidebar-nav a i {
+    font-size: 1.5rem;
+    min-width: 25px;
+    text-align: center;
+    transition: transform var(--transition-speed);
+}
+
+.sidebar-nav a span {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.sidebar:hover .sidebar-nav a span {
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+
+.sidebar-nav a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 0;
+    background: var(--accent-primary);
+    border-radius: 5px;
+    transition: height var(--transition-speed);
+}
+
+.sidebar-nav a:hover {
+    background: var(--bg-primary);
+}
+
+.sidebar-nav a:hover::before {
+    height: 80%;
+}
+
+.sidebar-nav a:hover i {
+    transform: scale(1.2) rotate(5deg);
+    color: var(--accent-primary);
+}
+
+.theme-switcher-sidebar {
+    margin-top: auto;
+}
+
+/* --- HEADER E NAVEGAÇÃO (MOBILE) --- */
+.mobile-header, .mobile-nav, .hamburger {
+    display: none;
+}
+
+.main-content {
+    margin-left: 80px;
+}
+
+/* --- SEÇÃO ABOUT (HERO) --- */
+#about {
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.parallax-section {
+    position: relative;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png'), 
+                      linear-gradient(45deg, var(--parallax-gradient-start), var(--parallax-gradient-end)); 
+    background-size: auto, cover;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.content-layer {
+    position: relative;
+    z-index: 1;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-image img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--accent-primary);
+    box-shadow: 0 0 30px var(--glow-color);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% { transform: translatey(0px); }
+	50% { transform: translatey(-20px); }
+	100% { transform: translatey(0px); }
+}
+
+.about-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-text h2 {
+    font-size: 1.8rem;
+    color: var(--accent-secondary);
+    margin-bottom: 1.5rem;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+}
+
+
+/* --- BOTÃO FUTURISTA --- */
+/* --- BOTÃO FUTURISTA (COM ANIMAÇÃO DE CRESCIMENTO) --- */
+
+.futuristic-btn {
+    position: relative; /* Essencial para o posicionamento do efeito */
+    padding: 1rem 2.5rem;
+    background: transparent;
+    border: 2px solid var(--accent-primary);
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    overflow: hidden; /* Boa prática para garantir que nada vaze */
+    transition: color var(--transition-speed);
+}
+
+/* O texto do botão, que precisa ficar na frente da animação */
+.futuristic-btn span {
+    position: relative;
+    z-index: 2; /* Camada 2 (topo) */
+}
+
+/* O elemento de preenchimento (agora com a nova lógica) */
+.futuristic-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-primary);
+    
+    /* --- ESTADO INICIAL DA NOVA ANIMAÇÃO --- */
+    opacity: 0; /* Começa transparente */
+    transform: scale(0); /* Começa com tamanho zero, invisível no centro */
+    
+    /* --- PROPRIEDADES QUE SERÃO ANIMADAS --- */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* --- CORREÇÃO DO Z-INDEX --- */
+    z-index: 1; /* Camada 1 (atrás do texto, na frente do botão) */
+}
+
+/* O que acontece quando o mouse está sobre o botão */
+.futuristic-btn:hover {
+    color: var(--bg-card); /* Muda a cor do texto para contrastar com o fundo */
+}
+
+/* --- ESTADO FINAL DA NOVA ANIMAÇÃO --- */
+.futuristic-btn:hover::before {
+    opacity: 1; /* Fica totalmente visível */
+    transform: scale(1); /* Cresce até o tamanho total do botão */
+}
+
+/* O efeito de brilho (glow) continua igual */
+.futuristic-btn .glow-effect {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--glow-color) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    transition: opacity var(--transition-speed);
+}
+
+.futuristic-btn:hover .glow-effect {
+    opacity: 1;
+}
+/* --- SEÇÃO SKILLS --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background-color: var(--bg-card);
+    padding: 2.5rem 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid transparent;
+    box-shadow: var(--shadow);
+    transition: transform var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 25px var(--glow-color);
+}
+
+.skill-card i {
+    font-size: 3.5rem;
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+    transition: color var(--transition-speed);
+}
+
+.skill-card:hover i {
+    color: var(--accent-secondary);
+}
+
+.skill-card span {
+    font-weight: 600;
+    font-family: var(--font-secondary);
+}
+
+/* --- SEÇÃO PROJETOS --- */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--accent-secondary);
+    background: none;
+    color: var(--accent-secondary);
+    cursor: pointer;
+    font-family: var(--font-primary);
+    transition: all var(--transition-speed);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--accent-secondary);
+    color: var(--bg-card);
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+    transition: transform var(--transition-speed);
+}
+
+.project-card:hover {
+    transform: translateY(-15px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: opacity var(--transition-speed);
+}
+
+.project-card:hover img {
+    opacity: 0.2;
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: linear-gradient(to top, var(--bg-card) 60%, transparent);
+    transform: translateY(35%);
+    transition: transform var(--transition-speed);
+}
+
+.project-card:hover .project-info {
+    transform: translateY(0);
+}
+
+.project-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.project-info p, .project-links {
+    opacity: 0;
+    transition: opacity var(--transition-speed) 0.2s;
+}
+
+.project-card:hover .project-info p, 
+.project-card:hover .project-links {
+    opacity: 1;
+}
+
+.project-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.project-links a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
+}
+
+/* --- SEÇÃO CONTATO --- */
+.contact-wrapper {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+#contact-form {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--accent-secondary);
+    background-color: transparent;
+    color: var(--text-primary);
+    font-family: var(--font-secondary);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color var(--transition-speed);
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 10px var(--glow-color);
+}
+
+.form-group label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: var(--text-secondary);
+    pointer-events: none;
+    transition: all var(--transition-speed);
+}
+
+#contact-form input:focus + label,
+#contact-form input:not(:placeholder-shown) + label,
+#contact-form textarea:focus + label,
+#contact-form textarea:not(:placeholder-shown) + label {
+    top: -0.75rem;
+    left: 0.75rem;
+    font-size: 0.8rem;
+    padding: 0 0.25rem;
+    background-color: var(--bg-primary);
+    color: var(--accent-primary);
+}
+
+.social-links-contact {
+    flex: 1;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.social-links-contact p {
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.social-links-contact a {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    margin: 0 1rem;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.social-links-contact a:hover {
+    color: var(--social-color, var(--accent-primary));
+    transform: scale(1.2);
+    text-shadow: 0 0 15px var(--social-color, var(--glow-color));
+}
+
+/* --- RODAPÉ --- */
+footer {
+    background-color: var(--bg-secondary);
+    text-align: center;
+    padding: 2rem 0;
+    margin-left: 80px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* --- THEME TOGGLE BUTTON --- */
+.theme-toggle-btn {
+    background: none;
+    border: 2px solid var(--text-primary);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.theme-toggle-btn:hover {
+    background-color: var(--accent-primary);
+    color: var(--bg-card);
+    border-color: var(--accent-primary);
+    transform: rotate(360deg);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 992px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .main-content, footer {
+        margin-left: 0;
+    }
+
+    /* Header Mobile */
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        height: 5rem;
+        background-color: var(--bg-secondary);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: var(--shadow);
+    }
+    .logo {
+        font-family: var(--font-primary);
+        font-weight: 700;
+        color: var(--accent-primary);
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 2rem;
+        height: 2rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
+    .hamburger-line {
+        width: 2rem;
+        height: 0.25rem;
+        background: var(--accent-primary);
+        border-radius: 10px;
+        transition: all 0.3s linear;
+        position: relative;
+        transform-origin: 1px;
+    }
+    .hamburger.open .hamburger-line:nth-child(1) {
+        transform: rotate(45deg);
+    }
+    .hamburger.open .hamburger-line:nth-child(2) {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    .hamburger.open .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+
+    /* Nav Mobile */
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        background: var(--bg-secondary);
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .mobile-nav.open {
+        transform: translateX(0);
+    }
+    
+    .mobile-nav nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .mobile-nav a {
+        font-size: 2rem;
+        font-family: var(--font-primary);
+        color: var(--text-primary);
+        text-decoration: none;
+    }
+
+    #about {
+        padding-top: 5rem; /* Espaço para o header fixo */
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text h1 {
+        font-size: 2.5rem;
+    }
+    .about-text h2 {
+        justify-content: center;
+    }
+
+    .about-image img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .contact-wrapper {
+        flex-direction: column;
+    }
+    
+    #contact-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    h2 {
+        font-size: 2rem;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-info {
+        transform: translateY(0);
+        position: relative;
+        background: var(--bg-card);
+    }
+     .project-info p, .project-links {
+        opacity: 1;
+    }
+    .project-card:hover img {
+        opacity: 1;
+    }
+     .project-card:hover {
+        transform: translateY(-5px);
+    }
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jean Cassiano</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <a href="#">JC.dev</a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#about" aria-label="Sobre"><i class="fas fa-user-astronaut"></i><span>Sobre</span></a>
+            <a href="#skills" aria-label="Habilidades"><i class="fas fa-code"></i><span>Habilidades</span></a>
+            <a href="#projects" aria-label="Projetos"><i class="fas fa-rocket"></i><span>Projetos</span></a>
+            <a href="#contact" aria-label="Contato"><i class="fas fa-envelope"></i><span>Contato</span></a>
+        </nav>
+        <div class="theme-switcher-sidebar">
+            <button id="theme-toggle-sidebar" class="theme-toggle-btn" aria-label="Alternar tema">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </aside>
+
+    <header class="mobile-header">
+        <a href="#" class="logo">JeanCassiano.dev</a>
+        <button class="hamburger" id="hamburger-button" aria-label="Abrir menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </header>
+    
+    <div class="mobile-nav" id="mobile-nav">
+        <nav>
+            <a href="#about">Sobre</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#projects">Projetos</a>
+            <a href="#contact">Contato</a>
+        </nav>
+         <button id="theme-toggle-mobile" class="theme-toggle-btn" aria-label="Alternar tema">
+                <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <main class="main-content">
+        <section id="about" class="parallax-section">
+            <div class="parallax-bg"></div>
+            <div class="container content-layer">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="./imgs/header.jpg" alt="Foto de Jean">
+                    </div>
+                    <div class="about-text">
+                        <h1>Olá, sou Jean Cassiano</h1>
+                        <h2>Engenheiro de Computação</h2>
+                        <p>Aluno de Engenharia de Computação buscando aplicar e expandir minhas habilidades em Engenharia de Software e Ciência de Dados.</p>
+                        <a href="./cv.pdf" target="_blank" class="btn futuristic-btn">
+                            <span>Baixar CV</span>
+                            <div class="glow-effect"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="container">
+            <h2><i class="fas fa-cogs"></i> Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fas fa-code"></i><span>C/C++</span></div>
+                <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="skill-card"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+                <div class="skill-card"><i class="fab fa-react"></i><span>React</span></div>
+                <div class="skill-card"><i class="fas fa-database"></i><span>SQL</span></div>
+                <div class="skill-card"><i class="fas fa-laptop-code"></i><span>Git</span></div>
+            </div>
+        </section>
+
+
+        <section id="projects" class="container">
+            <h2><i class="fas fa-tasks"></i> Meus Projetos</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="fullstack">Fullstack</button>
+                <button class="filter-btn" data-filter="database">Banco de Dados</button>
+                <button class="filter-btn" data-filter="engsoft">Engenharia de Software</button>
+                <button class="filter-btn" data-filter="embbedded">Embarcados</button>
+                <button class="filter-btn" data-filter="AI">IA</button>
+
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="fullstack">
+                    <img src="./imgs/site-engcomp.jpg" alt="Projeto Fullstack">
+                    <div class="project-info">
+                        <h3>Site EngComp USP São Carlos</h3>
+                        <p>Interface amigável para os alunos da Engenharia de Computação da USP de São Carlos.</p>
+                        <div class="project-links">
+                            <a href="https://saecomp.icmc.usp.br" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="fullstack">
+                    <img src="./imgs/data-series.jpg" alt="Projeto Fullstack">
+                    <div class="project-info">
+                        <h3>DashBoard para Análise de Séries Temporais</h3>
+                        <p>Dashboard interativa utilizando React para analisar dados variantes no tempo.</p>
+                         <div class="project-links">
+                            <a href="https://github.com/JeanCassiano/series-temporais" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="database">
+                    <img src="./imgs/sql-project.jpg" alt="Projeto Banco de Dados">
+                    <div class="project-info">
+                        <h3>Plataforma de Gerenciamento de Atletas</h3>
+                        <p>Projeto de aplicação completa para gestão de atletas  em competições de alto nível.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/JeanCassiano/SQL_DataBase_Project" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="engsoft">
+                    <img src="./imgs/discord.png" alt="Projeto Engenharia de Software">
+                    <div class="project-info">
+                        <h3>Perry Bot</h3>
+                        <p>Bot criado para o uso no discord oficial do curso. Possui integrações com Notion e Google Agenda.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/SAEComp/PerryBot" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="engsoft">
+                    <img src="./imgs/game.png" alt="Projeto Engenharia de Software">
+                    <div class="project-info">
+                        <h3>RPG Top-Down</h3>
+                        <p>Projeto de Jogo RPG com visão Top-Down, com foco na utilização de paradgimas de orientação à objetos.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/JeanCassiano/Modelagem-Orientada-A-Objetos" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="engsoft">
+                    <img src="./imgs/snake.png" alt="Projeto Engenharia de Software">
+                    <div class="project-info">
+                        <h3>S.N.A.K.E.</h3>
+                        <p>Projeto de Pesquisa voltado para o uso de LLMs no combate à notícias falsas e Deep Fakes</p>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="engsoft">
+                    <img src="./imgs/esalq.jpg" alt="Projeto Engenharia de Software">
+                    <div class="project-info">
+                        <h3>Projeto Trilha das Árvores</h3>
+                        <p>Projeto com o objetivo de tornar a Trilha das Árvores mais acessível e interativa para a comunidade.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/JvAlm71/ProjetoTrilhaDasArvores" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="embbedded">
+                    <img src="./imgs/IOT.jpg" alt="Projeto Embarcados">
+                    <div class="project-info">
+                        <h3>Projeto Embarcados</h3>
+                        <p>Projetos de Microcontroladores como controle de temperatura, cronômetro digital e controle de motor.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/JeanCassiano/Modelagem-Orientada-A-Objetos" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="AI">
+                    <img src="./imgs/ai.jpg" alt="Aplicações de IA">
+                    <div class="project-info">
+                        <h3>Classificador de Baixo Custo</h3>
+                        <p>Classificador de artigos acadêmicos em temas definidos utilizando LLMs.</p>
+                        <div class="project-links">
+                            <a href="https://colab.research.google.com/drive/1YxCCs2cDb7KIqwhBdy_H1bfaGh6Ey-5R?usp=sharing" target="_blank"><i class="fab fa-google"></i> Colab</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="AI">
+                    <img src="./imgs/ai_2.jpg" alt="Aplicações de IA">
+                    <div class="project-info">
+                        <h3>Categorização de Riscos em Notícias</h3>
+                        <p>Pipeline automatizado para a detecção e classificação de riscos em um grande volume de notícias.</p>
+                        <div class="project-links">
+                            <a href="https://colab.research.google.com/drive/1YYKuiRTZJ2rnWFt40bWauDa5fXzZrTkk?usp=sharing" target="_blank"><i class="fab fa-google"></i> Colab</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container">
+            <h2><i class="fas fa-paper-plane"></i> Entre em Contato</h2>
+            <div class="contact-wrapper">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required placeholder="">
+                        <label for="name">Nome</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder="">
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required placeholder=""></textarea>
+                        <label for="message">Mensagem</label>
+                    </div>
+                    <button style="cursor: pointer;" type="submit" class="btn futuristic-btn">
+                        <span>Enviar</span>
+                        <div class="glow-effect"></div>
+                    </button>
+                </form>
+                 <div class="social-links-contact">
+                    <p>Conecte-se comigo:</p>
+                    <a href="https://www.linkedin.com/in/jean-cassiano" target="_blank" aria-label="LinkedIn" style="--social-color: #0e76a8;"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/JeanCassiano" target="_blank" aria-label="GitHub" style="--social-color: #ffffff;"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/jean_cassiano_" target="_blank" aria-label="Instagram" style="--social-color: #1da1f2;"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Jean Cassiano. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+        <script>
+        (function(){
+            emailjs.init("Pj0UyIUYWYyByPTuV");
+        })();
+        </script>
+    <script>
+    document.getElementById("contact-form").addEventListener("submit", function(e){
+        e.preventDefault();
+
+        emailjs.sendForm("service_r1cm9xe", "template_726g58f", this)
+        .then(() => {
+            alert("Mensagem enviada com sucesso!");
+            this.reset();
+        }, (error) => {
+            alert("Erro ao enviar: " + JSON.stringify(error));
+        });
+    });
+    </script>
+</body>
+</html>
